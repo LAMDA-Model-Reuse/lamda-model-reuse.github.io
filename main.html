@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- adapted from https://gkioxari.github.io/Tutorials/eccv2018/index.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140259768-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-140259768-2');
+  </script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Tutorial</title>
+
+  <link rel="stylesheet" href="Tutorial_files/bootstrap.min.css" />
+  <link href="Tutorial_files/css" rel="stylesheet" type="text/css" />
+  <link href="Tutorial_files/style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    .instructorphoto img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .title { font-weight: 700; }
+    .subtitle { font-size: 18px; }
+    .slides-link { font-size: 14px; }
+
+     .schedule table th:first-child,
+  .schedule table td:first-child{
+    width: 140px;          /* 你可以改成 160px / 180px */
+    white-space: nowrap;   /* 禁止换行 */
+  }
+
+   .reading-box{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 14px 16px;
+    background: #fafafa;
+  }
+  .reading-box h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .reading-box .paper-title{
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .reading-box .paper-meta{
+    color: #444;
+    margin: 6px 0 10px 0;
+  }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <table border="0" align="center">
+    <tbody>
+      <tr>
+        <td width="720" align="center" valign="middle">
+          <h3>AAAI 2026 Tutorial on</h3>
+          <span class="title">Model Reuse in the LLM Era:</span><br/>
+          <span class="title">Leveraging Pre-Trained Resources with Classical and Modern Approaches</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" align="center">
+          <h3>
+            Location Room Peridot 202 <br/><br/>
+            8:30am-12:30pm, Wednesday, January 21, 2026 <br/>
+            
+          </h3>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Teaser Image (replace with your own) -->
+  <p>
+    <img src="Tutorial_files/scalable.png" style="max-width: 75%; height: auto;" alt="Tutorial teaser" />
+  </p>
+</div>
+
+<br/>
+
+<!-- Overview Section -->
+<div class="container">
+  <h2>Overview</h2>
+  <p align="justify">
+    The classical machine learning paradigm relies on data-centric approaches, which demand large-scale training data and significant computational resources, often limiting their scalability and practicality. In contrast, the pre-trained model (PTM)-centric paradigm, or model reuse, offers a compelling alternative by leveraging the knowledge embedded in existing models, thereby avoiding the need to train models from scratch. As model scales have grown, strategies for reusing PTMs have evolved—ranging from classical techniques such as vanilla fine-tuning and knowledge distillation to modern approaches like instruction tuning and parameter-efficient adaptation.
+  </p>
+  <p align="justify">
+    This tutorial offers a comprehensive overview of model reuse techniques spanning both traditional and foundation-model settings, highlighting the shared principles that unify them. We begin by introducing a unified model reuse workflow: selecting suitable PTMs from a model zoo, adapting them to target tasks, and managing them effectively. We then revisit classical reuse strategies and demonstrate how these fundamental ideas naturally extend to large-scale scenarios, including large language models (LLMs) and other foundation models. Through a combination of theoretical insights and practical examples, participants will gain a clear and in-depth understanding of how to reuse lightweight or cutting-edge foundation PTMs efficiently and effectively.
+  </p>
+    <p style="margin-top: 10px; color: #666; font-size: 14px;">
+    <b>Further Reading:</b>
+    Da-Wei Zhou, Han-Jia Ye,
+    <i>A Unifying Perspective on Model Reuse: From Small to Large Pre-Trained Models</i>,
+    IJCAI 2025.
+    <a href="https://www.ijcai.org/proceedings/2025/1201.pdf" target="_blank" rel="noopener">
+      [PDF]
+    </a>
+  </p>
+
+</div>
+
+<br/>
+
+
+
+<!-- Speakers & Organizers (merged per requirement) -->
+<div class="container">
+  <h2>Speakers &amp; Organizers</h2>
+
+  <div style="max-width: 900px; margin-left: auto; margin-right: auto;">
+
+    <div class="instructor">
+      <a href="https://www.lamda.nju.edu.cn/yehj/" onclick="return true;">
+        <div class="instructorphoto">
+          <!-- Replace with your photo file -->
+          <img src="Tutorial_files/hanjia.jpg" alt="Han-Jia Ye" />
+        </div>
+        <div><b>Han-Jia Ye</b><br/>Nanjing University</div>
+      </a>
+    </div>
+
+    <div class="instructor">
+      <a href="https://www.lamda.nju.edu.cn/zhoudw/" onclick="return true;">
+        <div class="instructorphoto">
+          <!-- Replace with your photo file -->
+          <img src="Tutorial_files/dawei.jpg" alt="Da-Wei Zhou" />
+        </div>
+        <div><b>Da-Wei Zhou</b><br/>Nanjing University</div>
+      </a>
+    </div>
+
+    <div class="instructor">
+      <a href="https://zhenguol.github.io/" onclick="return true;">
+        <div class="instructorphoto">
+          <!-- Replace with your photo file -->
+          <img src="Tutorial_files/zhenguo.jpg" alt="Zhenguo Li" />
+        </div>
+        <div><b>Zhenguo Li</b><br/>Autel &amp; HKUST</div>
+      </a>
+    </div>
+
+  </div>
+
+  <br/>
+
+  <h3>Biographies</h3>
+  <p align="justify">
+    <b>Han-Jia Ye</b> is an associate professor in the School of Artificial Intelligence at Nanjing University. His primary research interest is in machine learning, including representation learning, model reuse, and meta-learning. He received his PhD degree in computer science from Nanjing University, China, in 2019. He has served as the tutorial co-chair of SDM’23 and doctoral forum co-chair of SDM’22. Additionally, he is an area chair for top-tier conferences, including ICML, NeurIPS, ICLR, IJCAI, CVPR, and others.
+  </p>
+  <p align="justify">
+    <b>Da-Wei Zhou</b> received the PhD degree in computer science from Nanjing University, China, in 2024. He is currently an associate researcher with the National Key Lab for Novel Software Technology, the School of Artificial Intelligence, Nanjing University. His research interests lie primarily in machine learning and computer vision. He has published extensively on top-tier conferences and journals in relevant fields, including NeurIPS, ICLR, ICML, CVPR, TPAMI, IJCV, etc. He serves as Area Chair in leading conferences, such as ICLR, and was recognized as NeurIPS’s top reviewer, ICML’s top reviewer, and CVPR’s outstanding reviewer.
+  </p>
+  <p align="justify">
+    <b>Zhenguo Li</b> is a Chief AI Scientist at Autel and an Adjunct Professor in the Department of Computer Science and Engineering at The Hong Kong University of Science and Technology. He holds a Bachelor’s Degree and a Master’s Degree in Mathematics from Peking University, and a PhD in Machine Learning from The Chinese University of Hong Kong (supervised by Prof. Xiaoou Tang). His previous roles include Associate Research Scientist in the Department of Electrical Engineering at Columbia University (working with Prof. Shih-Fu Chang) and Director of Huawei Noah’s Ark AI Theory Lab. His research interests include machine learning and artificial intelligence, and his representative works include DeepFM, Meta-SGD, PixArt-α, LEGO-Prover, Dream 7B, and FUDOKI. He is also a pioneer in AutoML and AI Codec. His research has resulted in over 100 international patents and standards (e.g., 5.5G, JPEG-AI), with broad applications in autonomous driving, smartphone satellite communication (e.g., HUAWEI Pura 70 Ultra), recommendation systems, and AIGC. He is a long-serving Area Chair for top AI conferences (NeurIPS, ICLR, ICML) and a consecutive honoree of “AI 2000 Most Influential Scholars” (Aminer) and “Top 2% Most-Cited Scientists Worldwide” (Stanford University).
+  </p>
+</div>
+
+<br/>
+
+<!-- Tutorial Schedule (2 speakers + slides links) -->
+<div class="container">
+  <h2>Tutorial Schedule</h2>
+  <div class="schedule">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Session</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8:30 - 8:40</td>
+          <td>Opening &amp; Motivation</td>
+        </tr>
+
+        <tr>
+          <td>8:40 - 10:30</td>
+          <td>
+            <b>Han-Jia Ye</b> <span class="slides-link">[<a href="#" target="_blank" rel="noopener">Slides</a>]</span>
+            <br/>
+            Unified Workflow for Model Reuse; Classical Strategies and their extensions
+          </td>
+        </tr>
+
+        <tr>
+          <td>10:30 - 11:00</td>
+          <td>Coffee Break</td>
+        </tr>
+
+        <tr>
+          <td>11:00 - 12:20</td>
+          <td>
+            <b>Da-Wei Zhou</b> <span class="slides-link">[<a href="#" target="_blank" rel="noopener">Slides</a>]</span>
+            <br/>
+            Model Reuse in the Foundation-Model Era: instruction tuning, parameter-efficient adaptation, and practical examples
+          </td>
+        </tr>
+
+        <tr>
+          <td>12:20 - 12:30</td>
+          <td>Closing &amp; Q&amp;A</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br/>
+
+<!-- Reading Material -->
+<!-- <div class="container">
+  <h2>Reading Material</h2>
+  <div class="reading-box">
+    <div class="paper-title">
+      A Unifying Perspective on Model Reuse: From Small to Large Pre-Trained Models
+    </div>
+    <div class="paper-meta">
+      Da-Wei Zhou, Han-Jia Ye<br/>
+      International Joint Conference on Artificial Intelligence (IJCAI), 2025
+    </div>
+    <div>
+      PDF:
+      <a href="https://www.ijcai.org/proceedings/2025/1201.pdf" target="_blank" rel="noopener">
+        https://www.ijcai.org/proceedings/2025/1201.pdf
+      </a>
+      <br/>
+      <span style="color:#666;">
+        Participants may refer to this paper for more details on the unified perspective and workflow of model reuse.
+      </span>
+    </div>
+  </div>
+</div>
+
+<br/> -->
+
+<!-- Contact -->
+<div class="containersmall">
+  <p>
+    <!-- Contact:
+    <a href="mailto:hanjiaye@nju.edu.cn">Han-Jia Ye</a>,
+    <a href="mailto:daweizhou@nju.edu.cn">Da-Wei Zhou</a>,
+    <a href="mailto:zhenguoli@hkust.edu.hk">Zhenguo Li</a> -->
+    The template is adapted from
+<a href="https://vision-x-nyu.github.io/scalable-vision-cvpr2025/" target="_blank" rel="noopener">
+  this page</a>.
+
+
+  </p>
+</div>
+
+</body>
+</html>
