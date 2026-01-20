@@ -29,36 +29,89 @@
     .subtitle { font-size: 18px; }
     .slides-link { font-size: 14px; }
 
-     .schedule table th:first-child,
-  .schedule table td:first-child{
-    width: 140px;          /* 你可以改成 160px / 180px */
-    white-space: nowrap;   /* 禁止换行 */
-  }
+    .schedule table th:first-child,
+    .schedule table td:first-child{
+      width: 140px;
+      white-space: nowrap;
+    }
 
-   .reading-box{
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 14px 16px;
-    background: #fafafa;
-  }
-  .reading-box h3{
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-  .reading-box .paper-title{
-    font-weight: 700;
-    font-size: 16px;
-  }
-  .reading-box .paper-meta{
-    color: #444;
-    margin: 6px 0 10px 0;
-  }
+    /* ===== Dropdown INSIDE the first container (top-right of page body) ===== */
+    .hero-wrap{
+      position: relative;   /* anchor for absolute dropdown */
+    }
+    .bodynav{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 50;
+    }
+    .bodynav .dropdown{
+      position: relative;
+      display: inline-block;
+      font-family: inherit;
+    }
+    .bodynav .dropbtn{
+      background: #1d4ed8;          /* vivid blue */
+      border: 1px solid #1d4ed8;
+      color: #fff;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(29,78,216,.22);
+    }
+    .bodynav .dropbtn:hover{
+      background: #1e40af;
+      border-color: #1e40af;
+    }
+    .bodynav .dropdown-content{
+      display: none;
+      position: absolute;
+      right: 0;
+      margin-top: 0px;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 14px 30px rgba(0,0,0,.18);
+    }
+    .bodynav .dropdown-content a{
+      display: block;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: #111;
+      text-decoration: none;
+    }
+    .bodynav .dropdown-content a:hover{
+      background: #eef2ff;          /* light indigo */
+      text-decoration: none;
+    }
+    .bodynav .dropdown:hover .dropdown-content{
+      display: block;
+    }
+    /* ================================================================ */
   </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container hero-wrap">
+  <!-- Dropdown in the TOP-RIGHT of the main body container -->
+  <div class="bodynav">
+    <div class="dropdown">
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+        Previous Tutorials &#9662;
+      </button>
+      <div class="dropdown-content" role="menu" aria-label="Historical Tutorials">
+        <a href="https://www.lamda.nju.edu.cn/yehj/model_reuse/" target="_blank" rel="noopener">
+          AAAI 2024 Tutorial
+        </a>
+      </div>
+    </div>
+  </div>
+
   <table border="0" align="center">
     <tbody>
       <tr>
@@ -73,16 +126,14 @@
           <h3>
             Location Room Peridot 202 <br/><br/>
             8:30am-12:30pm, Wednesday, January 21, 2026 <br/>
-            
           </h3>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <!-- Teaser Image (replace with your own) -->
   <p>
-    <img src="Tutorial_files/scalable.png" style="max-width: 75%; height: auto;" alt="Tutorial teaser" />
+    <img src="Tutorial_files/scalable.png" style="max-width: 65%; height: auto;" alt="Tutorial teaser" />
   </p>
 </div>
 
@@ -97,7 +148,7 @@
   <p align="justify">
     This tutorial offers a comprehensive overview of model reuse techniques spanning both traditional and foundation-model settings, highlighting the shared principles that unify them. We begin by introducing a unified model reuse workflow: selecting suitable PTMs from a model zoo, adapting them to target tasks, and managing them effectively. We then revisit classical reuse strategies and demonstrate how these fundamental ideas naturally extend to large-scale scenarios, including large language models (LLMs) and other foundation models. Through a combination of theoretical insights and practical examples, participants will gain a clear and in-depth understanding of how to reuse lightweight or cutting-edge foundation PTMs efficiently and effectively.
   </p>
-    <p style="margin-top: 10px; color: #666; font-size: 14px;">
+  <p style="margin-top: 10px; color: #666; font-size: 14px;">
     <b>Further Reading:</b>
     Da-Wei Zhou, Han-Jia Ye,
     <i>A Unifying Perspective on Model Reuse: From Small to Large Pre-Trained Models</i>,
@@ -106,14 +157,11 @@
       [PDF]
     </a>
   </p>
-
 </div>
 
 <br/>
 
-
-
-<!-- Speakers & Organizers (merged per requirement) -->
+<!-- Speakers & Organizers -->
 <div class="container">
   <h2>Speakers &amp; Organizers</h2>
 
@@ -122,7 +170,6 @@
     <div class="instructor">
       <a href="https://www.lamda.nju.edu.cn/yehj/" onclick="return true;">
         <div class="instructorphoto">
-          <!-- Replace with your photo file -->
           <img src="Tutorial_files/hanjia.jpg" alt="Han-Jia Ye" />
         </div>
         <div><b>Han-Jia Ye</b><br/>Nanjing University</div>
@@ -132,7 +179,6 @@
     <div class="instructor">
       <a href="https://www.lamda.nju.edu.cn/zhoudw/" onclick="return true;">
         <div class="instructorphoto">
-          <!-- Replace with your photo file -->
           <img src="Tutorial_files/dawei.jpg" alt="Da-Wei Zhou" />
         </div>
         <div><b>Da-Wei Zhou</b><br/>Nanjing University</div>
@@ -142,7 +188,6 @@
     <div class="instructor">
       <a href="https://zhenguol.github.io/" onclick="return true;">
         <div class="instructorphoto">
-          <!-- Replace with your photo file -->
           <img src="Tutorial_files/zhenguo.jpg" alt="Zhenguo Li" />
         </div>
         <div><b>Zhenguo Li</b><br/>Autel &amp; HKUST</div>
@@ -167,7 +212,7 @@
 
 <br/>
 
-<!-- Tutorial Schedule (2 speakers + slides links) -->
+<!-- Tutorial Schedule -->
 <div class="container">
   <h2>Tutorial Schedule</h2>
   <div class="schedule">
@@ -187,7 +232,7 @@
         <tr>
           <td>8:40 - 10:30</td>
           <td>
-            <b>Han-Jia Ye</b> <span class="slides-link">[<a href="#" target="_blank" rel="noopener">Slides</a>]</span>
+            <b>Han-Jia Ye</b> <span class="slides-link">[<a href="./Tutorial_files/model_reuse_2026_part1.pdf" target="_blank" rel="noopener">Slides</a>]</span>
             <br/>
             Unified Workflow for Model Reuse; Classical Strategies and their extensions
           </td>
@@ -201,7 +246,7 @@
         <tr>
           <td>11:00 - 12:20</td>
           <td>
-            <b>Da-Wei Zhou</b> <span class="slides-link">[<a href="#" target="_blank" rel="noopener">Slides</a>]</span>
+            <b>Da-Wei Zhou</b> <span class="slides-link">[<a href="./Tutorial_files/model_reuse_2026_part2.pdf" target="_blank" rel="noopener">Slides</a>]</span>
             <br/>
             Model Reuse in the Foundation-Model Era: instruction tuning, parameter-efficient adaptation, and practical examples
           </td>
@@ -218,44 +263,11 @@
 
 <br/>
 
-<!-- Reading Material -->
-<!-- <div class="container">
-  <h2>Reading Material</h2>
-  <div class="reading-box">
-    <div class="paper-title">
-      A Unifying Perspective on Model Reuse: From Small to Large Pre-Trained Models
-    </div>
-    <div class="paper-meta">
-      Da-Wei Zhou, Han-Jia Ye<br/>
-      International Joint Conference on Artificial Intelligence (IJCAI), 2025
-    </div>
-    <div>
-      PDF:
-      <a href="https://www.ijcai.org/proceedings/2025/1201.pdf" target="_blank" rel="noopener">
-        https://www.ijcai.org/proceedings/2025/1201.pdf
-      </a>
-      <br/>
-      <span style="color:#666;">
-        Participants may refer to this paper for more details on the unified perspective and workflow of model reuse.
-      </span>
-    </div>
-  </div>
-</div>
-
-<br/> -->
-
-<!-- Contact -->
+<!-- Footer -->
 <div class="containersmall">
   <p>
-    <!-- Contact:
-    <a href="mailto:hanjiaye@nju.edu.cn">Han-Jia Ye</a>,
-    <a href="mailto:daweizhou@nju.edu.cn">Da-Wei Zhou</a>,
-    <a href="mailto:zhenguoli@hkust.edu.hk">Zhenguo Li</a> -->
     The template is adapted from
-<a href="https://vision-x-nyu.github.io/scalable-vision-cvpr2025/" target="_blank" rel="noopener">
-  this page</a>.
-
-
+    <a href="https://vision-x-nyu.github.io/scalable-vision-cvpr2025/" target="_blank" rel="noopener">this page</a>.
   </p>
 </div>
 
